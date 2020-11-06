@@ -1,0 +1,33 @@
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(20, 112, 148);
+    padding: 2px;
+    font-size: 20px;
+}
+.el{
+    padding: 10px;
+    flex-basis: 130px;
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.blocks{
+    flex-basis: 300px;
+    margin: 1%;
+}  
+footer{
+    text-align: center;
+    background-color: rgb(20, 112, 148);
+    padding: 18px;
+}
+#games{
+    text-align: center;
+}
+
+
