@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="one">
+    <input text="" id="znak">
+    <input type="number" id="two">
+    =
+    <span></span>
+    <br><br>
+    <button onclick="go()">Посчитать</button>
+    <script>
+        function go() {
+            let one = +document.querySelector('#one').value;
+            let two = +document.querySelector('#two').value;
+            let znak = document.querySelector('#znak').value;
+
+            let sum = '';
+
+            if(znak == '+') {
+                sum = one + two;
+            }
+            if(znak == '-') {
+                sum = one - two;
+            }
+            if(znak == '/') {
+                sum = one / two;
+            }
+            if(znak == '*') {
+                sum = one * two;
+            }
+            document.querySelector('span').textContent = sum;
+        }
+    </script>
+</body>
+</html>

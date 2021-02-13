@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: rgb(42, 96, 197);
+            font-size: 1.3em;
+            width: 400px;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+        }
+        p {
+            font-size: 1.5em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="doClick()">Клик</button>
+    <p>Очки: <span>0</span></p>
+    <p>Цель: набрать 2000 очков</p>
+    <hr>
+    <button onclick="plus()">Купить +1 клик при нажатии (20 очков)</button>
+    <br><br>
+    <button onclick="autoPlus()">Купить +1 клик в секунду (100 очков)</button>
+    <br><br>
+
+    <script>
+        let points = document.querySelector('span');
+        let have_points = 0;        
+        let how_many_plus = 1;      
+        let how_many_auto_plus = 0;
+
+        function doClick() {
+            have_points += how_many_plus;
+            points.textContent = have_points;
+        }
+
+        function plus() {
+            if (have_points >= 20){
+                have_points -= 20;
+                points.textContent = have_points;
+                how_many_plus++
+            }   else {
+                  alert ("ИДИ ОТСЮДА!")
+            } 
+        }
+
+        function autoPlus() {
+            if (have_points >= 100){
+                have_points -= 100;
+                points.textContent = have_points
+                how_many_plus++;
+            }   else {
+                  alert ("ИДИ ОТСЮДА!")
+            } 
+        }
+
+        setInterval(() => {
+            have_points += how_many_auto_plus;
+            points.textContent = have_points   
+        }, 1000);
+    </script>
+</body>
+</html>
